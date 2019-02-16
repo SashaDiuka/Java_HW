@@ -1,0 +1,1 @@
+Type *EPAM*, using `*` symbol with `System.out.println()`.
