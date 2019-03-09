@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MainEight {
+public class Task4_2 {
     public static void main(String[] args) {
         System.out.println("Please input your number:");
         String number = convertToBinary(in());
