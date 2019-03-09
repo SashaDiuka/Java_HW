@@ -3,12 +3,10 @@ import java.util.Scanner;
 public class Task4_2 {
 
     public static void main(String[] args) {
-        String reverseNumber = convertToReverseBinary(in());
-        String number = convertToBinary(reverseNumber);
-        System.out.println(number);
+        System.out.println(reverseString(convertToBinary(in())));
     }
 
-    private static String convertToBinary(String ReverseNumber) {
+    private static String reverseString(String ReverseNumber) {
         String number = "";
         for (int i = ReverseNumber.length() - 1; i >= 0; i--) {
             number += ReverseNumber.charAt(i);
@@ -16,7 +14,7 @@ public class Task4_2 {
         return number;
     }
 
-    private static String convertToReverseBinary(int number) {
+    private static String convertToBinary(int number) {
         String reverseNumber = "";
         for (int i = number; i >= 1; i /= 2) {
             number = i % 2;

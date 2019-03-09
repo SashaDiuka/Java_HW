@@ -5,13 +5,13 @@ public class Task4_1 {
     public static void main(String[] args) {
         String line = in();
         System.out.print("Your word consists of: ");
-        for (int i = 0; i < printSymbols(line).length(); i++) {
-            System.out.print(printSymbols(line).charAt(i) + ", ");
+        for (int i = 0; i < findSymbols(line).length(); i++) {
+            System.out.print(findSymbols(line).charAt(i) + ", ");
         }
         System.out.println("symbols");
     }
 
-    private static String printSymbols(String in) {
+    private static String findSymbols(String in) {
         String result = "";
         for (int i = 0; i < in.length(); i++) {
             if ((in.indexOf(in.charAt(i), i)) == in.lastIndexOf(in.charAt(i))) {
