@@ -1,26 +1,27 @@
 import java.util.Scanner;
 
-public class Task4_2 {
-
+public class MainEight {
     public static void main(String[] args) {
-        System.out.println(reverseString(convertToBinary(in())));
+        System.out.println("Please input your number:");
+        String number = convertToBinary(in());
+        System.out.println(number);
     }
 
-    private static String reverseString(String ReverseNumber) {
+    private static String reverseString(String s) {
         String number = "";
-        for (int i = ReverseNumber.length() - 1; i >= 0; i--) {
-            number += ReverseNumber.charAt(i);
+        for (int i = s.length() - 1; i >= 0; i--) {
+            number += s.charAt(i);
         }
         return number;
     }
 
     private static String convertToBinary(int number) {
-        String reverseNumber = "";
+        String reverseBinary = "";
         for (int i = number; i >= 1; i /= 2) {
             number = i % 2;
-            reverseNumber += number;
+            reverseBinary += number;
         }
-        return reverseNumber;
+        return reverseString(reverseBinary);
     }
 
     private static int in() {
