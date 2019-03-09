@@ -8,11 +8,11 @@ public class Task4_2 {
     }
 
     private static String reverseString(String s) {
-        String number = "";
+        String line = "";
         for (int i = s.length() - 1; i >= 0; i--) {
-            number += s.charAt(i);
+            line += s.charAt(i);
         }
-        return number;
+        return line;
     }
 
     private static String convertToBinary(int number) {
