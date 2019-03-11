@@ -14,7 +14,7 @@ public class Task4_1 {
     private static String findSymbols(String in) {
         String result = "";
         for (int i = 0; i < in.length(); i++) {
-            if ((in.indexOf(in.charAt(i), i)) == in.lastIndexOf(in.charAt(i))) {
+            if ((in.indexOf(in.charAt(i))) == in.lastIndexOf(in.charAt(i))) {
                 result += in.charAt(i);
             }
         }
