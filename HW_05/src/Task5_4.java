@@ -7,11 +7,11 @@ public class Task5_4 {
         System.out.println("Enter array size");
         int size = input();
         int[] array = createArray(size);
-        int[] arrOdd = findArrOdd(array);
-        int[] arrEven = findArrEven(array);
+        int[] arrayPositive = findArrayPositive(array);
+        int[] arrayNegative = findArrayNegative(array);
         System.out.println("Array consists of: " + Arrays.toString(array));
-        System.out.println("Array  odd consists of: " + Arrays.toString(arrOdd));
-        System.out.println("Array  even consists of: " + Arrays.toString(arrEven));
+        System.out.println("Array  of positive values consists of: " + Arrays.toString(arrayPositive));
+        System.out.println("Array  of negative values consists of: " + Arrays.toString(arrayNegative));
     }
 
     static int input() {
@@ -26,46 +26,46 @@ public class Task5_4 {
 
     static int[] createArray(int size) {
         int[] array = new int[size];
-        for (int counter = 0; counter < array.length; counter++) {
-            array[counter] = (int) (Math.random() * 100);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) ((Math.random() * 20) - 10);
         }
         return array;
     }
 
-    static int[] findArrOdd(int[] array) {
-        int oddArrLenth = 0;
+    static int[] findArrayPositive(int[] array) {
+        int positiveArrayLenth = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 != 0) {
-                oddArrLenth++;
+            if (array[i] >= 0) {
+                positiveArrayLenth++;
             }
         }
-        int[] arrOdd = new int[oddArrLenth];
-        int j = 0;
+        int[] arrayPositive = new int[positiveArrayLenth];
+        int counter = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 != 0) {
-                arrOdd[j] = array[i];
-                j++;
+            if (array[i] >= 0) {
+                arrayPositive[counter] = array[i];
+                counter++;
             }
         }
-        return arrOdd;
+        return arrayPositive;
     }
 
-    static int[] findArrEven(int[] array) {
-        int evenArrLenth = 0;
+    static int[] findArrayNegative(int[] array) {
+        int negativeArrayLenth = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                evenArrLenth++;
+            if (array[i] < 0) {
+                negativeArrayLenth++;
             }
         }
-        int[] arrEven = new int[evenArrLenth];
-        int j = 0;
+        int[] arrayNegative = new int[negativeArrayLenth];
+        int counter = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                arrEven[j] = array[i];
-                j++;
+            if (array[i] < 0) {
+                arrayNegative[counter] = array[i];
+                counter++;
             }
         }
-        return arrEven;
+        return arrayNegative;
     }
 }
 
