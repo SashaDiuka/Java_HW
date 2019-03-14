@@ -32,10 +32,10 @@ public class Task5_2 {
     static void calcOdd(int[] array) {
         int oddNumber = 0;
         int oddSum = 0;
-        for (int counter = 0; counter < array.length; counter++) {
-            if ((array[counter]) % 2 != 0) {
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 != 0) {
                 oddNumber++;
-                oddSum += array[counter];
+                oddSum += array[i];
             }
         }
         System.out.println("Array has " + oddNumber + " odd elements" + "" +

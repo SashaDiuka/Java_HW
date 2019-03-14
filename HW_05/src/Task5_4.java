@@ -7,8 +7,8 @@ public class Task5_4 {
         System.out.println("Enter array size");
         int size = input();
         int[] array = createArray(size);
-        int[] arrayPositive = findArrayPositive(array);
-        int[] arrayNegative = findArrayNegative(array);
+        int[] arrayPositive = findPositiveArray(array);
+        int[] arrayNegative = findNegativeArray(array);
         System.out.println("Array consists of: " + Arrays.toString(array));
         System.out.println("Array  of positive values consists of: " + Arrays.toString(arrayPositive));
         System.out.println("Array  of negative values consists of: " + Arrays.toString(arrayNegative));
@@ -32,40 +32,40 @@ public class Task5_4 {
         return array;
     }
 
-    static int[] findArrayPositive(int[] array) {
+    static int[] findPositiveArray(int[] array) {
         int positiveArrayLenth = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= 0) {
                 positiveArrayLenth++;
             }
         }
-        int[] arrayPositive = new int[positiveArrayLenth];
+        int[] positiveArray = new int[positiveArrayLenth];
         int counter = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= 0) {
-                arrayPositive[counter] = array[i];
+                positiveArray[counter] = array[i];
                 counter++;
             }
         }
-        return arrayPositive;
+        return positiveArray;
     }
 
-    static int[] findArrayNegative(int[] array) {
+    static int[] findNegativeArray(int[] array) {
         int negativeArrayLenth = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
                 negativeArrayLenth++;
             }
         }
-        int[] arrayNegative = new int[negativeArrayLenth];
+        int[] negativeArray = new int[negativeArrayLenth];
         int counter = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
-                arrayNegative[counter] = array[i];
+                negativeArray[counter] = array[i];
                 counter++;
             }
         }
-        return arrayNegative;
+        return negativeArray;
     }
 }
 
