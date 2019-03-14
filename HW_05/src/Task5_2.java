@@ -8,13 +8,13 @@ public class Task5_2 {
         int size = input();
         int[] array = createArray(size);
         System.out.println("Array consists of:" + Arrays.toString(array));
-        calcOdd(array);
+        getSummaryOddElementes(array);
     }
 
     static int[] createArray(int size) {
         int[] array = new int[size];
-        for (int counter = 0; counter < array.length; counter++) {
-            array[counter] = (int) (Math.random() * 100);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 100);
         }
         return array;
     }
@@ -29,16 +29,16 @@ public class Task5_2 {
         return size;
     }
 
-    static void calcOdd(int[] array) {
+    static void getSummaryOddElementes(int[] array) {
         int oddNumber = 0;
-        int oddSum = 0;
+        int oddSummary = 0;
         for (int i = 0; i < array.length; i++) {
             if (i % 2 != 0) {
                 oddNumber++;
-                oddSum += array[i];
+                oddSummary += array[i];
             }
         }
         System.out.println("Array has " + oddNumber + " odd elements" + "" +
-                "\nSummary of array odd elements = " + oddSum);
+                "\nSummary of array odd elements = " + oddSummary);
     }
 }

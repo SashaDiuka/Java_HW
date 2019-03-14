@@ -5,18 +5,18 @@ public class Task5_3 {
     public static void main(String[] args) {
         System.out.println("Enter arrays size");
         int size = input();
-        int[] arr1 = createArray(size);
-        int[] arr2 = createArray(size);
-        int[] arrSum = arraysSum(arr1, arr2);
-        System.out.println("Array1 consists of:" + Arrays.toString(arr1));
-        System.out.println("Array2 consists of:" + Arrays.toString(arr2));
-        System.out.println("Summary array of arrays 1 and 2 consists of:" + Arrays.toString(arrSum));
+        int[] arrayOne = createArray(size);
+        int[] arrayTwo = createArray(size);
+        int[] arraysSummary = arraysSummary(arrayOne, arrayTwo);
+        System.out.println("Array one  consists of:" + Arrays.toString(arrayOne));
+        System.out.println("Array two consists of:" + Arrays.toString(arrayTwo));
+        System.out.println("Summary array of arrays one and two consists of:" + Arrays.toString(arraysSummary));
     }
 
     static int[] createArray(int size) {
         int[] array = new int[size];
-        for (int counter = 0; counter < array.length; counter++) {
-            array[counter] = (int) (Math.random() * 100);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 100);
         }
         return array;
     }
@@ -31,11 +31,11 @@ public class Task5_3 {
         return size;
     }
 
-    static int[] arraysSum(int[] arr1, int[] arr2) {
-        int[] arraySum = new int[arr1.length];
-        for (int counter = 0; counter < arraySum.length; counter++) {
-            arraySum[counter] = arr1[counter] + arr2[counter];
+    static int[] arraysSummary(int[] arrayOne, int[] arrayTwo) {
+        int[] arraysSummary = new int[arrayOne.length];
+        for (int i = 0; i < arraysSummary.length; i++) {
+            arraysSummary[i] = arrayOne[i] + arrayTwo[i];
         }
-        return arraySum;
+        return arraysSummary;
     }
 }

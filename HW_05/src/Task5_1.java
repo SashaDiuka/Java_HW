@@ -14,8 +14,8 @@ public class Task5_1 {
 
     static int[] createArray(int size) {
         int[] array = new int[size];
-        for (int counter = 0; counter < array.length; counter++) {
-            array[counter] = (int) (Math.random() * 100);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 100);
         }
         return array;
     }
