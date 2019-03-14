@@ -35,7 +35,7 @@ public class Task5_4 {
     static int[] getPositiveElements(int[] array) {
         int positiveArrayLength = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] >= 0) {
+            if (array[i] > 0) {
                 positiveArrayLength++;
             }
         }
