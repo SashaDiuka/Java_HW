@@ -33,13 +33,13 @@ public class Task5_4 {
     }
 
     static int[] getPositiveElements(int[] array) {
-        int positiveArrayLenth = 0;
+        int positiveArrayLength = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= 0) {
-                positiveArrayLenth++;
+                positiveArrayLength++;
             }
         }
-        int[] positiveArray = new int[positiveArrayLenth];
+        int[] positiveArray = new int[positiveArrayLength];
         int counter = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= 0) {
@@ -51,13 +51,13 @@ public class Task5_4 {
     }
 
     static int[] getNegativeElements(int[] array) {
-        int negativeArrayLenth = 0;
+        int negativeArrayLength = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
-                negativeArrayLenth++;
+                negativeArrayLength++;
             }
         }
-        int[] negativeArray = new int[negativeArrayLenth];
+        int[] negativeArray = new int[negativeArrayLength];
         int counter = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
