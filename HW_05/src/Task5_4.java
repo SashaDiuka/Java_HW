@@ -7,8 +7,8 @@ public class Task5_4 {
         System.out.println("Enter array size");
         int size = input();
         int[] array = createArray(size);
-        int[] arrayPositive = findPositiveArray(array);
-        int[] arrayNegative = findNegativeArray(array);
+        int[] arrayPositive = getPositiveElements(array);
+        int[] arrayNegative = getNegativeElements(array);
         System.out.println("Array consists of: " + Arrays.toString(array));
         System.out.println("Array  of positive values consists of: " + Arrays.toString(arrayPositive));
         System.out.println("Array  of negative values consists of: " + Arrays.toString(arrayNegative));
@@ -32,7 +32,7 @@ public class Task5_4 {
         return array;
     }
 
-    static int[] findPositiveArray(int[] array) {
+    static int[] getPositiveElements(int[] array) {
         int positiveArrayLenth = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= 0) {
@@ -50,7 +50,7 @@ public class Task5_4 {
         return positiveArray;
     }
 
-    static int[] findNegativeArray(int[] array) {
+    static int[] getNegativeElements(int[] array) {
         int negativeArrayLenth = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
