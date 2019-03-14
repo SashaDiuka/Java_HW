@@ -5,6 +5,7 @@ public class Task5_4 {
 
     public static void main(String[] args) {
         System.out.println("Enter array size");
+
         int size = input();
         int[] array = createArray(size);
         int[] arrayPositive = getPositiveElements(array);
@@ -16,11 +17,15 @@ public class Task5_4 {
 
     static int input() {
         Scanner sc = new Scanner(System.in);
-        int size = sc.nextInt();
-        if (size < 2) {
-            System.out.println("Incorrect array size");
-            System.exit(0);
+        int size;
+        do {
+            size = sc.nextInt();
+            if (size < 2) {
+                System.out.println("Enter correct size");
+            }
+            continue;
         }
+        while (size < 2);
         return size;
     }
 
@@ -42,7 +47,7 @@ public class Task5_4 {
         int[] positiveArray = new int[positiveArrayLength];
         int counter = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] >= 0) {
+            if (array[i] > 0) {
                 positiveArray[counter] = array[i];
                 counter++;
             }
