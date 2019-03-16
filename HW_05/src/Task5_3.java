@@ -23,11 +23,14 @@ public class Task5_3 {
 
     static int input() {
         Scanner sc = new Scanner(System.in);
-        int size = sc.nextInt();
-        if (size < 2) {
-            System.out.println("Incorrect array size");
-            System.exit(0);
+        int size;
+        do {
+            size = sc.nextInt();
+            if (size < 2) {
+                System.out.println("Enter correct size");
+            }
         }
+        while (size < 2);
         return size;
     }
 

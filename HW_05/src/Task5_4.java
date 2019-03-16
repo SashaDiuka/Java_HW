@@ -23,7 +23,6 @@ public class Task5_4 {
             if (size < 2) {
                 System.out.println("Enter correct size");
             }
-            continue;
         }
         while (size < 2);
         return size;
