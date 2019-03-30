@@ -22,16 +22,6 @@ class Book {
         this.cost = cost;
     }
 
-    public void view() {
-        System.out.println("ID:" + id);
-        System.out.println("Name: " + name);
-        System.out.println("Author: " + author);
-        System.out.println("Publisher: " + publisher);
-        System.out.println("The year of edition: " + editionYear);
-        System.out.println("Pages: " + numberOfPages);
-        System.out.println("Cost: " + cost + " UAH");
-    }
-
     public int getId() {
         return id;
     }
@@ -86,5 +76,9 @@ class Book {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public void reprise(int percent) {
+        cost = cost + (int) ((double) ((cost / 100)) * percent);
     }
 }
