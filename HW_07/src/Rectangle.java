@@ -12,15 +12,6 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public String toString() {
-        return "Rectangle " +
-                "width=" + width +
-                ", height=" + height +
-                ", color='" + getColor() + '\'' +
-                "class='" + getClass() + '\'';
-    }
-
-    @Override
     public double calcArea() {
         if (width > 0 && height > 0) {
             return width * height;
@@ -28,5 +19,14 @@ public class Rectangle extends Shape {
             System.err.println("Incorrect data");
             return DEFAULT_AREA;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle " +
+                "width=" + width +
+                ", height=" + height +
+                ", color='" + getColor() + '\'' +
+                "class='" + getClass() + '\'';
     }
 }

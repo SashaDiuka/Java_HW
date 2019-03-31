@@ -14,16 +14,6 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public String toString() {
-        return "Triangle " +
-                "a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                ", color='" + getColor() + '\'' +
-                "class='" + getClass() + '\'';
-    }
-
-    @Override
     public double calcArea() {
         if (a > 0 && b > 0 && c > 0) {
             int p = (a + b + c) / 2;
@@ -32,5 +22,15 @@ public class Triangle extends Shape {
             System.err.println("Incorrect data");
             return DEFAULT_AREA;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle " +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                ", color='" + getColor() + '\'' +
+                "class='" + getClass() + '\'';
     }
 }

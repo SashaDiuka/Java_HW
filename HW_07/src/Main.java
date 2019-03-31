@@ -6,7 +6,7 @@ public class Main {
         Shape[] figures = initShapeArray();
         showFigures(figures);
         System.out.println("\n" + getFiguresAreaSum(figures));
-        System.out.println("\n" + Arrays.toString(getDifferentFiguresAreas(figures)));
+        System.out.println("\n" + Arrays.toString(getDifferentFiguresAreasSum(figures)));
     }
 
     public static Shape[] initShapeArray() {
@@ -37,7 +37,7 @@ public class Main {
         return sumArea;
     }
 
-    public static double[] getDifferentFiguresAreas(Shape[] figures) {
+    public static double[] getDifferentFiguresAreasSum(Shape[] figures) {
         double triangleArea = 0.0;
         double circleArea = 0.0;
         double rectangleArea = 0.0;
@@ -50,6 +50,6 @@ public class Main {
                 circleArea += row.calcArea();
             }
         }
-        return new double[] {rectangleArea, circleArea, triangleArea};
+        return new double[]{rectangleArea, circleArea, triangleArea};
     }
 }
