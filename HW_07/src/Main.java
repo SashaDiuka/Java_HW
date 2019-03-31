@@ -3,13 +3,14 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        showFigures(getShapeArray());
-        System.out.println("\n" + figuresAreaSum(getShapeArray()));
-        System.out.println("\n" + Arrays.toString(getDifferentAreas(getShapeArray())));
+        Shape[] figures = initShapeArray();
+        showFigures(figures);
+        System.out.println("\n" + figuresAreaSum(figures));
+        System.out.println("\n" + Arrays.toString(getDifferentAreas(figures)));
     }
 
-    public static Shape[] getShapeArray() {
-        Shape[] figures = {
+    public static Shape[] initShapeArray() {
+        return new Shape[]{
                 new Rectangle("blue", 12, 4),
                 new Rectangle("red", 23, 5),
                 new Rectangle("grey", 37, 22),
@@ -20,7 +21,6 @@ public class Main {
                 new Triangle("white", 3, 3, 5),
                 new Triangle("black", 12, 12, 12)
         };
-        return figures;
     }
 
     public static void showFigures(Shape[] figures) {
@@ -50,7 +50,6 @@ public class Main {
                 circleArea += row.calcArea();
             }
         }
-        double[] result = {rectangleArea, circleArea, triangleArea};
-        return result;
+        return new double[] {rectangleArea, circleArea, triangleArea};
     }
 }

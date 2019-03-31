@@ -1,4 +1,5 @@
 public class Shape {
+    public static final double DEFAULT_AREA = 0.0;
     private String color;
 
     public Shape() {
@@ -20,6 +21,6 @@ public class Shape {
     }
 
     public double calcArea() {
-        return 0.0;
+        return DEFAULT_AREA;
     }
 }
