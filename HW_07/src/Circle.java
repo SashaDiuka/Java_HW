@@ -13,7 +13,7 @@ public class Circle extends Shape {
     public String toString() {
         return "Circle " +
                 "radius=" + radius +
-                ", color='" + color + '\'' +
+                ", color='" + getColor() + '\'' +
                 "class='" + getClass() + '\'';
     }
 

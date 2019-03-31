@@ -3,6 +3,12 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
+        showFigures(getShapeArray());
+        System.out.println("\n" + figuresAreaSum(getShapeArray()));
+        System.out.println("\n" + Arrays.toString(getDifferentAreas(getShapeArray())));
+    }
+
+    public static Shape[] getShapeArray() {
         Shape[] figures = {
                 new Rectangle("blue", 12, 4),
                 new Rectangle("red", 23, 5),
@@ -14,9 +20,7 @@ public class Main {
                 new Triangle("white", 3, 3, 5),
                 new Triangle("black", 12, 12, 12)
         };
-        showFigures(figures);
-        System.out.println("\n" + figuresAreaSum(figures));
-        System.out.println("\n" + Arrays.toString(getDifferentAreas(figures)));
+        return figures;
     }
 
     public static void showFigures(Shape[] figures) {

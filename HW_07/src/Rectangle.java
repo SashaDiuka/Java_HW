@@ -1,6 +1,6 @@
 public class Rectangle extends Shape {
-    int width;
-    int height;
+    private int width;
+    private int height;
 
     public Rectangle() {
     }
@@ -16,12 +16,12 @@ public class Rectangle extends Shape {
         return "Rectangle " +
                 "width=" + width +
                 ", height=" + height +
-                ", color='" + color + '\'' +
+                ", color='" + getColor() + '\'' +
                 "class='" + getClass() + '\'';
     }
 
     @Override
     public double calcArea() {
-        return width*height;
+        return width * height;
     }
 }

@@ -1,7 +1,7 @@
 public class Triangle extends Shape {
-    int a;
-    int b;
-    int c;
+    private int a;
+    private int b;
+    private int c;
 
     public Triangle() {
     }
@@ -19,13 +19,13 @@ public class Triangle extends Shape {
                 "a=" + a +
                 ", b=" + b +
                 ", c=" + c +
-                ", color='" + color + '\'' +
+                ", color='" + getColor() + '\'' +
                 "class='" + getClass() + '\'';
     }
 
     @Override
     public double calcArea() {
-        int p = (a + b + c)/2;
-        return Math.sqrt(p*((p - a)*(p - b)*(p - c)));
+        int p = (a + b + c) / 2;
+        return Math.sqrt(p * ((p - a) * (p - b) * (p - c)));
     }
 }
