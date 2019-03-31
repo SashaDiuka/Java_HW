@@ -22,6 +22,11 @@ public class Rectangle extends Shape {
 
     @Override
     public double calcArea() {
-        return width * height;
+        if (width > 0 && height > 0) {
+            return width * height;
+        } else {
+            System.err.println("Incorrect data");
+            return DEFAULT_AREA;
+        }
     }
 }

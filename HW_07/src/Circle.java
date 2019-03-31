@@ -19,6 +19,11 @@ public class Circle extends Shape {
 
     @Override
     public double calcArea() {
-        return Math.PI * (radius * radius);
+        if (radius > 0) {
+            return Math.PI * (radius * radius);
+        } else {
+            System.err.println("Incorrect data");
+            return DEFAULT_AREA;
+        }
     }
 }

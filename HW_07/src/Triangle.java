@@ -25,7 +25,12 @@ public class Triangle extends Shape {
 
     @Override
     public double calcArea() {
-        int p = (a + b + c) / 2;
-        return Math.sqrt(p * ((p - a) * (p - b) * (p - c)));
+        if (a > 0 && b > 0 && c > 0) {
+            int p = (a + b + c) / 2;
+            return Math.sqrt(p * ((p - a) * (p - b) * (p - c)));
+        } else {
+            System.err.println("Incorrect data");
+            return DEFAULT_AREA;
+        }
     }
 }
