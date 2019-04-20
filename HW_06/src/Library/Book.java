@@ -1,5 +1,7 @@
 package Library;
 
+import java.util.Objects;
+
 class Book {
     private int id;
     private String name;
@@ -80,5 +82,36 @@ class Book {
 
     public void reprise(int percent) {
         cost = cost + (int) ((double) ((cost / 100)) * percent);
+    }
+
+    @Override
+    public String toString() {
+        return "Book " +
+                "id: " + id +
+                "\nname: '" + name + '\'' +
+                "\nauthor: '" + author + '\'' +
+                "\npublisher: '" + publisher + '\'' +
+                "\neditionYear: " + editionYear +
+                "\nnumberOfPages: " + numberOfPages +
+                "\ncost: " + cost;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return id == book.id &&
+                editionYear == book.editionYear &&
+                numberOfPages == book.numberOfPages &&
+                cost == book.cost &&
+                name.equals(book.name) &&
+                author.equals(book.author) &&
+                publisher.equals(book.publisher);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, author, publisher, editionYear, numberOfPages, cost);
     }
 }

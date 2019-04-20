@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Shape {
     public static final double DEFAULT_AREA = 0.0;
     private String color;
@@ -22,5 +24,18 @@ public class Shape {
 
     public double calcArea() {
         return DEFAULT_AREA;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Shape shape = (Shape) o;
+        return Objects.equals(color, shape.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color);
     }
 }

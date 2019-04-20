@@ -1,8 +1,12 @@
 package Library;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Books {
     private Book[] books;
     private int index = -1;
+    private View view = new View();
 
     public Books() {
     }
@@ -13,28 +17,46 @@ public class Books {
 
     public void addBook(Book book) {
         if (index == books.length - 1) {
-            System.out.println("Library is full");
+            view.showMessage(View.FULL_LIBRARY);
         } else {
             books[++index] = book;
         }
     }
 
-    public void showLibrary() {
+    @Override
+    public String toString() {
         if (index < 0) {
-            System.out.println("Library is emty");
+            return View.EMPTY_LIBRARY;
         } else {
+            StringBuilder result = new StringBuilder();
             for (int i = 0; i <= index; i++) {
-                books[i].view();
-                System.out.println();
+                result.append("\n");
+                result.append(books[i].toString());
+                result.append("\n");
             }
+            return result.toString();
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Books books1 = (Books) o;
+        return index == books1.index &&
+                Arrays.equals(books, books1.books);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(index);
+        result = 31 * result + Arrays.hashCode(books);
+        return result;
     }
 
     public void reprice(int perscent) {
         for (int i = 0; i <= index; i++) {
-            int cost = books[i].getCost();
-            cost = cost + (cost / 100 * perscent);
-            books[i].setCost(cost);
+            books[i].reprise(perscent);
         }
     }
 
@@ -48,7 +70,6 @@ public class Books {
         return listSize;
     }
 
-
     public Books findByAuthor(String author) {
         int listSize = countBooks(author);
         if (listSize > 0) {
@@ -60,7 +81,7 @@ public class Books {
             }
             return list;
         } else {
-            System.out.println("There is no book of this author");
+            view.showMessage(View.EMPTY_SEARCH_RESULT);
             return new Books(0);
         }
     }
@@ -86,14 +107,8 @@ public class Books {
             }
             return list;
         } else {
-            System.out.println("There are no books since this year");
+            view.showMessage(View.EMPTY_SEARCH_RESULT);
             return new Books(0);
         }
     }
 }
-
-
-
-
-
-
