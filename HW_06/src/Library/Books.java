@@ -3,6 +3,8 @@ package Library;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Objects;
+import java.util.Comparator;
+
 
 public class Books {
     private Book[] books;
@@ -18,7 +20,7 @@ public class Books {
 
     public void addBook(Book book) {
         if (index == books.length - 1) {
-            view.showMessage(View.FULL_LIBRARY);
+            view.showErrMessage(View.FULL_LIBRARY);
         } else {
             books[++index] = book;
         }
@@ -131,5 +133,24 @@ public class Books {
         int result = Objects.hash(index);
         result = 31 * result + Arrays.hashCode(books);
         return result;
+    }
+
+    private String viewBooks(Book[] array, int index) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < index; i++) {
+            result.append(array[i] + "\n");
+        }
+        return result.toString();
+    }
+
+    public String sortByName(){
+        Book[] newBooks = Arrays.copyOf(books, index);
+        Arrays.sort(newBooks, new Comparator<Book>() {
+            @Override
+            public int compare(Book o1, Book o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        return viewBooks(newBooks, index);
     }
 }

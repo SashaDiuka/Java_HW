@@ -56,5 +56,6 @@ public class Controller {
         view.showResult(library.findByAuthor());
         view.showMessage(View.ASK_YEAR);
         view.showResult(library.findSinceYear());
+        System.out.println(library.sortByName());
     }
 }
