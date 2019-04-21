@@ -10,7 +10,7 @@ public class Utilites {
         return sc.nextInt();
     }
 
-    public static String inputString() {
+    public static String inputString() throws InputMismatchException {
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
     }

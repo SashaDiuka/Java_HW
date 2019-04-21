@@ -1,7 +1,5 @@
 package Library;
 
-import java.util.InputMismatchException;
-
 public class Controller {
     private View view = new View();
 
@@ -55,7 +53,7 @@ public class Controller {
         library.reprice();
         view.showResult(library);
         view.showMessage(View.ASK_AUTHOR);
-        view.showResult(library.findByAuthor(Utilites.inputString()));
+        view.showResult(library.findByAuthor());
         view.showMessage(View.ASK_YEAR);
         view.showResult(library.findSinceYear());
     }
