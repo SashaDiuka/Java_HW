@@ -7,6 +7,7 @@ public class View {
     static final String FULL_LIBRARY = "Library is full";
     static final String EMPTY_LIBRARY = "Library is empty";
     static final String ENTER_PERCENT_TO_CHANGE = "Enter percent to change";
+    static final String INCORRECT_INPUT = "You entered invalid data.\nPlease, try again\n";
 
     public void showResult(Books library) {
         System.out.println(library.toString());
@@ -18,5 +19,9 @@ public class View {
 
     public void showMessage(String message) {
         System.out.println(message);
+    }
+
+    public void showErrMessage(String message) {
+        System.err.println(message);
     }
 }

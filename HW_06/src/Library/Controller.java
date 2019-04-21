@@ -1,5 +1,7 @@
 package Library;
 
+import java.util.InputMismatchException;
+
 public class Controller {
     private View view = new View();
 
@@ -50,10 +52,11 @@ public class Controller {
         library.addBook(evolution);
         view.showResult(library);
         view.showMessage(View.ENTER_PERCENT_TO_CHANGE);
-        library.reprice(Utilites.inputInt());
+        library.reprice();
+        view.showResult(library);
         view.showMessage(View.ASK_AUTHOR);
         view.showResult(library.findByAuthor(Utilites.inputString()));
         view.showMessage(View.ASK_YEAR);
-        view.showResult(library.findSinceYear(Utilites.inputInt()));
+        view.showResult(library.findSinceYear());
     }
 }

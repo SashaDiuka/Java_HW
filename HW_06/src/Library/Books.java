@@ -1,6 +1,7 @@
 package Library;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Objects;
 
 public class Books {
@@ -54,9 +55,15 @@ public class Books {
         return result;
     }
 
-    public void reprice(int perscent) {
-        for (int i = 0; i <= index; i++) {
-            books[i].reprise(perscent);
+    public void reprice() {
+        try {
+            int perscent = Utilites.inputInt();
+            for (int i = 0; i <= index; i++) {
+                books[i].reprise(perscent);
+            }
+        } catch (InputMismatchException e) {
+            view.showErrMessage(View.INCORRECT_INPUT);
+            reprice();
         }
     }
 
@@ -96,19 +103,27 @@ public class Books {
         return listSize;
     }
 
-    public Books findSinceYear(int year) {
-        int listSize = countBooks(year);
-        if (listSize > 0) {
-            Books list = new Books(listSize);
-            for (int i = 0; i <= index; i++) {
-                if (books[i].getEditionYear() >= year) {
-                    list.addBook(books[i]);
+    public Books findSinceYear() {
+        try {
+            int year = Utilites.inputInt();
+            Validator validator = new Validator();
+            validator.inputValidateByYear(year);
+            int listSize = countBooks(year);
+            if (listSize > 0) {
+                Books list = new Books(listSize);
+                for (int i = 0; i <= index; i++) {
+                    if (books[i].getEditionYear() >= year) {
+                        list.addBook(books[i]);
+                    }
                 }
+                return list;
+            } else {
+                view.showMessage(View.EMPTY_SEARCH_RESULT);
+                return new Books(0);
             }
-            return list;
-        } else {
-            view.showMessage(View.EMPTY_SEARCH_RESULT);
-            return new Books(0);
+        } catch (InputMismatchException e) {
+            view.showErrMessage(View.INCORRECT_INPUT);
+            return findSinceYear();
         }
     }
 }
