@@ -137,8 +137,9 @@ public class Books {
 
     private String viewBooks(Book[] array, int index) {
         StringBuilder result = new StringBuilder();
+        result.append("Sorted library:\n");
         for (int i = 0; i < index; i++) {
-            result.append(array[i] + "\n");
+            result.append("\n" + array[i] + "\n");
         }
         return result.toString();
     }
@@ -147,8 +148,8 @@ public class Books {
         Book[] newBooks = Arrays.copyOf(books, index);
         Arrays.sort(newBooks, new Comparator<Book>() {
             @Override
-            public int compare(Book o1, Book o2) {
-                return o1.getName().compareTo(o2.getName());
+            public int compare(Book one, Book two) {
+                return one.getName().compareTo(two.getName());
             }
         });
         return viewBooks(newBooks, index);
